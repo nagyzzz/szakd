@@ -3,6 +3,11 @@ from PyQt5 import uic
 import sys
 
 class main_window(QMainWindow):
+    def open_file_chooser(self):
+        pass
+        #self.window = QtWidget.QMainWindow()
+
+
     def __init__(self):
         super(main_window, self).__init__()
         uic.loadUi("main_window.ui", self)

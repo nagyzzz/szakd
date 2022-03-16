@@ -18,20 +18,25 @@
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>130</y>
-      <width>231</width>
-      <height>20</height>
+      <y>119</y>
+      <width>261</width>
+      <height>31</height>
      </rect>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_browse">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>130</y>
-      <width>81</width>
-      <height>21</height>
+      <x>340</x>
+      <y>120</y>
+      <width>91</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Browse</string>
