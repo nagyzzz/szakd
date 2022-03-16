@@ -4,13 +4,13 @@ import sys
 from file_chooser import Ui_MainWindow
 
 class main_window(QMainWindow):
-
+"""""
     def open_file_chooser(self):
         self.window = QtWidgets.QMainWindow()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self.window)
         self.window.show()
-
+"""
     def __init__(self):
         super(main_window, self).__init__()
         uic.loadUi("main_window.ui", self)
