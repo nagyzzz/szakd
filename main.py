@@ -1,12 +1,15 @@
 from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel, QTextEdit, QAction, QTabBar, QPushButton
 from PyQt5 import uic
 import sys
+from file_chooser import Ui_MainWindow
 
 class main_window(QMainWindow):
-    def open_file_chooser(self):
-        pass
-        #self.window = QtWidget.QMainWindow()
 
+    def open_file_chooser(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self.window)
+        self.window.show()
 
     def __init__(self):
         super(main_window, self).__init__()
