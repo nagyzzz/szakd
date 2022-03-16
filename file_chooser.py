@@ -1,11 +1,13 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from PyQt5.QtWidgets import QApplication, QPushButton, QMainWindow, QFileDialog, QDialog
+import sys
+#from PyQt5.uic import loadUi
 
 class file_chooser_Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(640, 480)
+        MainWindow.resize(446, 192)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.file_name = QtWidgets.QLineEdit(self.centralwidget)
@@ -19,7 +21,7 @@ class file_chooser_Ui_MainWindow(object):
         self.pushButton_browse.setObjectName("pushButton_browse")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 640, 18))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 446, 18))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -27,7 +29,13 @@ class file_chooser_Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
+        self.pushButton_browse.clicked.connect(self.clicker)  # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def clicker(self):
+        fname = QFileDialog.getOpenFileName()
+        if fname:
+            print(str(fname))
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -37,9 +45,10 @@ class file_chooser_Ui_MainWindow(object):
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
+    ui = file_chooser_Ui_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
