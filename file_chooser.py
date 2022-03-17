@@ -39,11 +39,10 @@ class file_chooser_Ui_MainWindow(object):
         fname = QFileDialog.getOpenFileName()
         if fname:
             print(fname)
-            """""
             self.window = QtWidgets.QMainWindow()
             self.ui = file_viewer_Ui_MainWindow()
             self.ui.setupUi(self.window)
-            self.window.show()"""
+            self.window.show()
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
