@@ -17,13 +17,13 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTextBrowser" name="textBrowser">
+   <widget class="QTextEdit" name="textEdit">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>601</width>
-      <height>401</height>
+      <width>661</width>
+      <height>221</height>
      </rect>
     </property>
    </widget>

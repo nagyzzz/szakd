@@ -1,7 +1,6 @@
 
-
 from PyQt5 import QtCore, QtGui, QtWidgets
-import sys
+
 
 class file_viewer_Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -10,9 +9,9 @@ class file_viewer_Ui_MainWindow(object):
         MainWindow.resize(700, 300)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.textBrowser = QtWidgets.QTextBrowser(self.centralwidget)
-        self.textBrowser.setGeometry(QtCore.QRect(10, 10, 601, 401))
-        self.textBrowser.setObjectName("textBrowser")
+        self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
+        self.textEdit.setGeometry(QtCore.QRect(10, 10, 661, 221))
+        self.textEdit.setObjectName("textEdit")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 700, 18))
@@ -44,7 +43,7 @@ class file_viewer_Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.toolBar.actionTriggered['QAction*'].connect(MainWindow.close) # type: ignore
-        self.toolBar.actionTriggered['QAction*'].connect(MainWindow.show) # type: ignore
+        #self.toolBar.actionTriggered['QAction*'].connect(MainWindow.show) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
