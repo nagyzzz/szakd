@@ -1,9 +1,9 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QApplication, QPushButton, QMainWindow, QFileDialog, QDialog
+from PyQt5.QtWidgets import QFileDialog
+
 from file_viewer import file_viewer_Ui_MainWindow
 import sys
-#from PyQt5.uic import loadUi
 
 class file_chooser_Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -29,19 +29,21 @@ class file_chooser_Ui_MainWindow(object):
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
 
+        self.pushButton_browse.clicked.connect(self.clicker)
+
         self.retranslateUi(MainWindow)
-        self.pushButton_browse.clicked.connect(self.clicker)  # type: ignore
+
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def clicker(self):
         fname = QFileDialog.getOpenFileName()
         if fname:
-            print(fname[0])
+            print(fname)
+            """""
             self.window = QtWidgets.QMainWindow()
             self.ui = file_viewer_Ui_MainWindow()
             self.ui.setupUi(self.window)
-            self.window.show()
-
+            self.window.show()"""
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -51,7 +53,6 @@ class file_chooser_Ui_MainWindow(object):
 
 if __name__ == "__main__":
     import sys
-
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = file_chooser_Ui_MainWindow()

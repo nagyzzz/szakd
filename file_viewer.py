@@ -1,16 +1,21 @@
 
-from PyQt5 import QtCore, QtGui, QtWidgets
 
+from PyQt5 import QtCore, QtGui, QtWidgets
+import sys
 
 class file_viewer_Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(640, 480)
+        MainWindow.setEnabled(True)
+        MainWindow.resize(700, 300)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+        self.textBrowser = QtWidgets.QTextBrowser(self.centralwidget)
+        self.textBrowser.setGeometry(QtCore.QRect(10, 10, 601, 401))
+        self.textBrowser.setObjectName("textBrowser")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 640, 18))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 700, 18))
         self.menubar.setObjectName("menubar")
         self.menuFile = QtWidgets.QMenu(self.menubar)
         self.menuFile.setObjectName("menuFile")
@@ -39,6 +44,7 @@ class file_viewer_Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.toolBar.actionTriggered['QAction*'].connect(MainWindow.close) # type: ignore
+        self.toolBar.actionTriggered['QAction*'].connect(MainWindow.show) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
