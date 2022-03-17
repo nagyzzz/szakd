@@ -9,6 +9,10 @@ class Ui_MainWindow(object):
         self.ui.setupUi(self.window)
         self.window.show()
 
+    def closeEvent(self, event):
+        for window in QApplication.topLevelWidgets():
+            window.close()
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(640, 480)
@@ -80,7 +84,7 @@ class Ui_MainWindow(object):
         self.pushButton_1.clicked.connect(self.textEdit_1.clear) # type: ignore
         self.pushButton_2.clicked.connect(self.textEdit_2.clear) # type: ignore
         self.pushButton_3.clicked.connect(self.textEdit_3.clear) # type: ignore
-        self.actionQuit.triggered.connect(MainWindow.close) # type: ignore
+        self.actionQuit.triggered.connect(MainWindow.closeEvent) # type: ignore
         self.actionOpen.triggered.connect(MainWindow.show) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
