@@ -1,6 +1,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QApplication, QPushButton, QMainWindow, QFileDialog, QDialog
+from file_viewer import file_viewer_Ui_MainWindow
 import sys
 #from PyQt5.uic import loadUi
 
@@ -35,7 +36,12 @@ class file_chooser_Ui_MainWindow(object):
     def clicker(self):
         fname = QFileDialog.getOpenFileName()
         if fname:
-            print(str(fname))
+            print(fname[0])
+            self.window = QtWidgets.QMainWindow()
+            self.ui = file_viewer_Ui_MainWindow()
+            self.ui.setupUi(self.window)
+            self.window.show()
+
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate

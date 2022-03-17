@@ -58,7 +58,7 @@
   <action name="actionQuit">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../Program Files (x86)/Qt Designer/resources/file-exit.png</normaloff>../../../../Program Files (x86)/Qt Designer/resources/file-exit.png</iconset>
+     <normaloff>resources/file-exit.png</normaloff>resources/file-exit.png</iconset>
    </property>
    <property name="text">
     <string>Quit</string>

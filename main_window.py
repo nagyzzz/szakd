@@ -52,7 +52,7 @@ class Ui_MainWindow(object):
         self.toolBar = QtWidgets.QToolBar(MainWindow)
         self.toolBar.setObjectName("toolBar")
         MainWindow.addToolBar(QtCore.Qt.TopToolBarArea, self.toolBar)
-        self.actionOpen = QtWidgets.QAction(self.centralwidget, triggered = lambda: self.open_file_chooser() )
+        self.actionOpen = QtWidgets.QAction(self.centralwidget, triggered = lambda: self.open_file_chooser())
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("resources/file-open.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.actionOpen.setIcon(icon)
