@@ -2,6 +2,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
+
 class file_viewer_Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -40,11 +41,13 @@ class file_viewer_Ui_MainWindow(object):
         self.menubar.addAction(self.menuFile.menuAction())
         self.toolBar.addAction(self.actionSave)
         self.toolBar.addAction(self.actionQuit)
-
+        #print("add")
+        #print(fname)
         self.retranslateUi(MainWindow)
         self.toolBar.actionTriggered['QAction*'].connect(MainWindow.close) # type: ignore
         #self.toolBar.actionTriggered['QAction*'].connect(MainWindow.show) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
