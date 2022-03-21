@@ -1,4 +1,3 @@
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QFileDialog
 from file_viewer import file_viewer_Ui_MainWindow
@@ -26,26 +25,21 @@ class file_chooser_Ui_MainWindow(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-
         self.pushButton_browse.clicked.connect(self.clicker)
-
         self.retranslateUi(MainWindow)
-
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def clicker(self):
-        fname = QFileDialog.getOpenFileName(None, 'Open file',
-   'C:\\Users\\nagyz',"Text files (*.txt)")
-        if fname:
-            #print(fname[0])
+        fname = QFileDialog.getOpenFileName(None, 'Open file', 'C:\\', "Text files (*.txt)")
+        if (fname[0] != 0):
             with open(fname[0], 'r') as f:
                 szoveg = f.read()
-            #print(str(szoveg))
-            self.window = QtWidgets.QMainWindow()
-            self.ui = file_viewer_Ui_MainWindow()
-            self.ui.setupUi(self.window)
-            self.ui.textEdit.setText(szoveg)
-            self.window.show()
+                self.window = QtWidgets.QMainWindow()
+                self.ui = file_viewer_Ui_MainWindow()
+                self.ui.setupUi(self.window)
+                self.ui.textEdit.setText(szoveg)
+                self.window.show()
+
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate

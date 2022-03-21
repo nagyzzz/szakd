@@ -1,7 +1,4 @@
-
 from PyQt5 import QtCore, QtGui, QtWidgets
-
-
 
 class file_viewer_Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -41,22 +38,17 @@ class file_viewer_Ui_MainWindow(object):
         self.menubar.addAction(self.menuFile.menuAction())
         self.toolBar.addAction(self.actionSave)
         self.toolBar.addAction(self.actionQuit)
-        #print("add")
-        #print(fname)
-        self.retranslateUi(MainWindow)
-        self.toolBar.actionTriggered['QAction*'].connect(MainWindow.close) # type: ignore
-        #self.toolBar.actionTriggered['QAction*'].connect(MainWindow.show) # type: ignore
+        self.actionQuit.triggered.connect(MainWindow.close)  # type: ignore
+        self.actionSave.triggered.connect(self.save)  # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-
-    def retranslateUi(self, MainWindow):
-        _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.menuFile.setTitle(_translate("MainWindow", "File"))
-        self.toolBar.setWindowTitle(_translate("MainWindow", "toolBar"))
-        self.actionSave.setText(_translate("MainWindow", "Save"))
-        self.actionQuit.setText(_translate("MainWindow", "Quit"))
-
+    def save(self):
+        SFile = QtWidgets.QFileDialog.getSaveFileName(self.textEdit, 'SaveTextFile',
+                                                       'C:\\', "Text files (*.txt)")
+        Text = self.textEdit.toPlainText()
+        if SFile[0]:
+               with open(SFile[0], 'w') as file:
+                    file.write(Text)
 
 if __name__ == "__main__":
     import sys

@@ -1,8 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-import sys
+from PyQt5.QtWidgets import QApplication
 from file_chooser import file_chooser_Ui_MainWindow
-
-#var = fname = 0
 
 class Ui_MainWindow(object):
     def open_file_chooser(self):
