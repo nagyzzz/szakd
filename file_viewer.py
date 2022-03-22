@@ -38,8 +38,8 @@ class file_viewer_Ui_MainWindow(object):
         self.menubar.addAction(self.menuFile.menuAction())
         self.toolBar.addAction(self.actionSave)
         self.toolBar.addAction(self.actionQuit)
-        self.actionQuit.triggered.connect(MainWindow.close)  # type: ignore
-        self.actionSave.triggered.connect(self.save)  # type: ignore
+        self.actionQuit.triggered.connect(MainWindow.close)
+        self.actionSave.triggered.connect(self.save)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def save(self):
