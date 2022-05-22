@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>550</width>
-    <height>500</height>
+    <height>600</height>
    </rect>
   </property>
   <property name="font">
@@ -23,57 +23,85 @@
    <widget class="QPushButton" name="pushButton_nmap">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>160</y>
+      <x>140</x>
+      <y>40</y>
       <width>221</width>
       <height>51</height>
      </rect>
     </property>
     <property name="text">
-     <string>nmap</string>
+     <string>Run Nmap</string>
     </property>
    </widget>
-   <widget class="QTextBrowser" name="textBrowser">
+   <widget class="QPushButton" name="pushButton_quit">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>40</y>
-      <width>301</width>
+      <x>170</x>
+      <y>380</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>quit</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit_password">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>120</y>
+      <width>411</width>
       <height>41</height>
      </rect>
     </property>
-    <property name="html">
-     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Sans Serif'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Please choose a program:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <property name="toolTip">
+     <string comment="password" extracomment="password"/>
+    </property>
+    <property name="statusTip">
+     <string extracomment="password"/>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_johnTheRipper">
+   <widget class="QTextEdit" name="textEdit_options">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>250</y>
-      <width>221</width>
-      <height>51</height>
+      <x>60</x>
+      <y>190</y>
+      <width>411</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string comment="password" extracomment="password"/>
+    </property>
+    <property name="statusTip">
+     <string extracomment="password"/>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_sC">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>260</y>
+      <width>61</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>john the ripper</string>
+     <string>-sC</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_hashcat">
+   <widget class="QCheckBox" name="checkBox_sS">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>350</y>
-      <width>221</width>
-      <height>51</height>
+      <x>220</x>
+      <y>310</y>
+      <width>61</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>hashcat</string>
+     <string>-sS</string>
     </property>
    </widget>
   </widget>

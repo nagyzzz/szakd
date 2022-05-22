@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'mian_window.ui'
+# Form implementation generated from reading ui file 'main_window.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.6
 #
@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(550, 500)
+        MainWindow.resize(550, 600)
         font = QtGui.QFont()
         font.setFamily("MS Sans Serif")
         font.setPointSize(11)
@@ -22,17 +22,45 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.pushButton_nmap = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_nmap.setGeometry(QtCore.QRect(120, 160, 221, 51))
+        self.pushButton_nmap.setGeometry(QtCore.QRect(140, 110, 221, 51))
         self.pushButton_nmap.setObjectName("pushButton_nmap")
         self.textBrowser = QtWidgets.QTextBrowser(self.centralwidget)
-        self.textBrowser.setGeometry(QtCore.QRect(90, 40, 301, 41))
+        self.textBrowser.setGeometry(QtCore.QRect(110, 40, 301, 41))
+        palette = QtGui.QPalette()
+        brush = QtGui.QBrush(QtGui.QColor(191, 191, 191))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(170, 170, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(240, 240, 240))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Base, brush)
+        self.textBrowser.setPalette(palette)
         self.textBrowser.setObjectName("textBrowser")
         self.pushButton_johnTheRipper = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_johnTheRipper.setGeometry(QtCore.QRect(120, 250, 221, 51))
+        self.pushButton_johnTheRipper.setGeometry(QtCore.QRect(140, 190, 221, 51))
         self.pushButton_johnTheRipper.setObjectName("pushButton_johnTheRipper")
         self.pushButton_hashcat = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_hashcat.setGeometry(QtCore.QRect(120, 350, 221, 51))
+        self.pushButton_hashcat.setGeometry(QtCore.QRect(140, 270, 221, 51))
         self.pushButton_hashcat.setObjectName("pushButton_hashcat")
+        self.textBrowser_2 = QtWidgets.QTextBrowser(self.centralwidget)
+        self.textBrowser_2.setGeometry(QtCore.QRect(220, 350, 41, 41))
+        palette = QtGui.QPalette()
+        brush = QtGui.QBrush(QtGui.QColor(191, 191, 191))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(170, 170, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(240, 240, 240))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Base, brush)
+        self.textBrowser_2.setPalette(palette)
+        self.textBrowser_2.setObjectName("textBrowser_2")
+        self.pushButton_nmap_2 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_nmap_2.setGeometry(QtCore.QRect(180, 420, 131, 51))
+        self.pushButton_nmap_2.setObjectName("pushButton_nmap_2")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 550, 29))
@@ -56,6 +84,12 @@ class Ui_MainWindow(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">Please choose a program:</span></p></body></html>"))
         self.pushButton_johnTheRipper.setText(_translate("MainWindow", "john the ripper"))
         self.pushButton_hashcat.setText(_translate("MainWindow", "hashcat"))
+        self.textBrowser_2.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Sans Serif\'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">or</span></p></body></html>"))
+        self.pushButton_nmap_2.setText(_translate("MainWindow", "quit"))
 
 
 if __name__ == "__main__":
