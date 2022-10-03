@@ -58,9 +58,9 @@ class Ui_MainWindow(object):
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Base, brush)
         self.textBrowser_2.setPalette(palette)
         self.textBrowser_2.setObjectName("textBrowser_2")
-        self.pushButton_nmap_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_nmap_2.setGeometry(QtCore.QRect(180, 420, 131, 51))
-        self.pushButton_nmap_2.setObjectName("pushButton_nmap_2")
+        self.pushButton_quit = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_quit.setGeometry(QtCore.QRect(180, 420, 131, 51))
+        self.pushButton_quit.setObjectName("pushButton_quit")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 550, 29))
@@ -71,7 +71,13 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
+       ## self.actionQuit.triggered.connect(MainWindow.closeEvent)  # type: ignore
+        self.pushButton_quit.pressed.connect(MainWindow.closeEvent)  # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def closeEvent(self, event):
+        for window in QApplication.topLevelWidgets():
+            window.close()
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -89,7 +95,7 @@ class Ui_MainWindow(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Sans Serif\'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">or</span></p></body></html>"))
-        self.pushButton_nmap_2.setText(_translate("MainWindow", "quit"))
+        self.pushButton_quit.setText(_translate("MainWindow", "quit"))
 
 
 if __name__ == "__main__":
