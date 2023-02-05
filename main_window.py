@@ -1,19 +1,29 @@
+#próba
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from PyQt5.QtWidgets import QApplication
+from nmap_window import Ui_NmapWindow
+import sys
 
 class Ui_MainWindow(object):
+    def openNmapWindow(self):
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_NmapWindow()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(550, 600)
+        MainWindow.move(100, 100)
         font = QtGui.QFont()
         font.setFamily("MS Sans Serif")
         font.setPointSize(11)
         MainWindow.setFont(font)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.pushButton_nmap = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_nmap = QtWidgets.QPushButton(self.centralwidget, clicked = lambda: self.openNmapWindow())
         self.pushButton_nmap.setGeometry(QtCore.QRect(140, 110, 221, 51))
         self.pushButton_nmap.setObjectName("pushButton_nmap")
         self.textBrowser = QtWidgets.QTextBrowser(self.centralwidget)
@@ -62,14 +72,18 @@ class Ui_MainWindow(object):
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
 
+
+
         self.retranslateUi(MainWindow)
-       ## self.actionQuit.triggered.connect(MainWindow.closeEvent)  # type: ignore
+       ## self.pushButton_quit.pressed.connect(MainWindow.close) # type: ignore
         self.pushButton_quit.pressed.connect(MainWindow.closeEvent)  # type: ignore
+
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def closeEvent(self, event):
         for window in QApplication.topLevelWidgets():
-            window.close()
+            window.closeAllWindows()
+
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -95,6 +109,7 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
+  ##  app.aboutToQuit.connect(close_all_window(self))
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
